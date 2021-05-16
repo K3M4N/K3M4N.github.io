@@ -14275,43 +14275,437 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>League of Legends (LoL) is a MOBA (Multiplayer Online Battle Arena) game developed by Riot Games.
+Released in 2009, LoL has rapidly grown in popularity, having become one of the most played multiplayer online games and most played electronic sport (e-sport) in the world. As of 2021 it boasts a global revenue of $15 billion USD, professional franchises and partnerships worth hundreds of millions of dollars, and 115 million active monthly users with over 150 million registered users. The premise of the game is relatively simple: Two teams of five players battle in player versus player combat, each team occupying and defending their half of the map. Each of the ten players controls a unique character with distinct abilities and differing styles of play. During a match, champions become more powerful by collecting experience points, earning gold, and purchasing items to defeat the opposing team. In the game a team wins by pushing through to the enemy base and destroying their "Nexus", a large structure located within. More information can be found <a href="https://na.leagueoflegends.com/en-us/how-to-play/">here</a>.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<p>League of Legends(LoL) is a MOBA (Multiplayer Online Battle Arena) game developed by Riot Games.
-Released in 2009, LoL has rapidly grown in popularity and has become one of the most played multiplayer online games and most played Electronic sport(Esport) in the world. As of 2021 it boasts a global revenue of $15 billion USD, professional franchises and partnerships worth hundreds of millions of dollars, and 115 million active monthly users with over 150 million registered users. The premise of the game is relatively simple: in the game, two teams of five players battle in player versus player combat, each team occupying and defending their half of the map. Each of the ten players controls a unique character with distinct abilities and differing styles of play. During a match, champions become more powerful by collecting experience points, earning gold, and purchasing items to defeat the opposing team. In the game a team wins by pushing through to the enemy base and destroying their "Nexus", a large structure located within. More information can be found <a href="https://na.leagueoflegends.com/en-us/how-to-play/">here</a>.</p>
+<h4><center>By Keman Wang</center></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2><center>Motivation</center></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In my tutorial, I am interested in shedding some light on who are considered the best professional League of Legends players, as well as finding out what factors make a player "good". As we have learned from the Moneyball story on the strength of utilizing data science in producing a strong baseball team, I believe this project can similarly represent good data science practices in order to create a similarly strong League of Legends e-sport team. While it may be relatively straightforward to conclude who are the best League of Legends players of each year by identifying the winners of each year's World Championship, perhaps there are other characteristics between players that could indicate factors which help make a team more likely to win. Data science practices help us in this regard by giving us tools to help identify player characterstics, clarity on how those characteristics might relate to player performance, and determine whether any particular element should be focused on when identifying and drafting professional players. For readers that are unfamiliar with the game, I hope this analysis will act as a gentle introduction into League of Legends and make them interested in trying out the game, as well as following its professional scene as the game continues to take the world by storm. For experienced players and growing franchises, I hope to provide some insight on intriguing statistic correlations between the best League of Legends players, as well as help with drafting promising individual talents into fantasy teams or professional teams.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2><center>Getting Started</center></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We begin with using Python3 and a few imported libraries listed below</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[136]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2>Data Collection and Preprocessing</h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>With the conclusion of the 2020 League of Legends World Championship, we will be pulling the player statistics
 from every player that participated in the League of Legends World Championships from 2014-2020 from this <a href="https://www.rotowire.com/esports/stats-lol.php?league=297&amp;series=&amp;tourn=">website</a> that hosts a plethora of player statistics for recreational fantasy team building.</p>
+<p>We begin by manually extracting the data from the years of 2014-2020 from the JSON HTML web page URLS into 5 data frames. Manual scraping from the tables was not an option here due to the fact that the website generated the table through scripts. The unique URL for each JSON HTML were found by scrolling through the source code in order to find the option values for each respective year. Note that we will be adding in an additional column representing year as it will help us analyze the data later.</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[194]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Obtaining 2014 League of Legends World Championship Data</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.rotowire.com/esports/tables/stats-lol.php?type=total&amp;league=297&amp;series=4&quot;</span><span class="p">)</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">df2014</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+    <span class="n">df2014</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2014</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2014</span>
+
+<span class="c1"># Obtaining 2015 League of Legends World Championship Data</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.rotowire.com/esports/tables/stats-lol.php?type=total&amp;league=297&amp;series=30&quot;</span><span class="p">)</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">df2015</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+    <span class="n">df2015</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2015</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2015</span>
+
+<span class="c1"># Obtaining 2016 League of Legends World Championship Data</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.rotowire.com/esports/tables/stats-lol.php?type=total&amp;league=297&amp;series=669&quot;</span><span class="p">)</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">df2016</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+    <span class="n">df2016</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2016</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2016</span>
+
+<span class="c1"># Obtaining 2017 League of Legends World Championship Data</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.rotowire.com/esports/tables/stats-lol.php?type=total&amp;league=297&amp;series=1308&quot;</span><span class="p">)</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">df2017</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+    <span class="n">df2017</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2017</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2017</span>
+
+<span class="c1"># Obtaining 2018 League of Legends World Championship Data</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.rotowire.com/esports/tables/stats-lol.php?type=total&amp;league=297&amp;series=1605&quot;</span><span class="p">)</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">df2018</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+    <span class="n">df2018</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2018</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2018</span>
+
+<span class="c1"># Obtaining 2019 League of Legends World Championship Data</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.rotowire.com/esports/tables/stats-lol.php?type=total&amp;league=297&amp;series=1839&quot;</span><span class="p">)</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">df2019</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+    <span class="n">df2019</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2019</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2019</span>
+
+<span class="c1"># Obtaining 2020 League of Legends World Championship Data</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.rotowire.com/esports/tables/stats-lol.php?type=total&amp;league=297&amp;series=2987&quot;</span><span class="p">)</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="n">df2020</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+    <span class="n">df2020</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2020</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2020</span>
+</pre></div>
+
+     </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<center>By Keman Wang</center>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h3><center>Motivation</center></h3>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In my tutorial, I am interested in shedding some light on who are considered the best professional League of Legends players, as well as finding out what factors make a player "good". As we have learned from the Moneyball story on the strength of utilizing data science in producing a strong baseball team, I believe this project can similarly represent good data science practices in order to create a similarly strong League of Legends Esport team. While it may be relatively straightforward to conclude who are the best League of Legends players of each year by identifying the winners of each year's World Championship, perhaps there are other characteristics between players that could indicate factors which help make a team more likely to win. Data science practices help us in this regard by giving us tools to help identify player characterstics, clarity on how those characteristics might relate to player performance, and determine whether any particular element should be focused on when identifying and drafting professional players. For readers that are unfamiliar with the game, I hope this analysis will act as a gentle introduction into League of Legends and make them interested in trying out the game, as well as following its professional scene as the game continues to take the world by storm. For experienced players and growing franchises, I hope to provide some insight on intriguing statistic correlations between the best League of Legends players, as well as help with drafting promising individual talents into fantasy teams or professional teams.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2>Reading the Data</h2>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[201]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">df2014</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
+
 
 <div class="jp-OutputArea jp-Cell-outputArea">
 
 <div class="jp-OutputArea-child">
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[NbConvertApp] Converting notebook Final_Tutorial_Assignment.ipynb to html
-[NbConvertApp] Writing 572060 bytes to index.html
-</pre>
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[201]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>assists</th>
+      <th>cs</th>
+      <th>csm</th>
+      <th>deathperc</th>
+      <th>deaths</th>
+      <th>dpm</th>
+      <th>fb</th>
+      <th>firstname</th>
+      <th>gamertag</th>
+      <th>games</th>
+      <th>goldperc</th>
+      <th>kda</th>
+      <th>kills</th>
+      <th>killshare</th>
+      <th>kp</th>
+      <th>lastname</th>
+      <th>losses</th>
+      <th>matchLength</th>
+      <th>matches</th>
+      <th>pandaTeam</th>
+      <th>player</th>
+      <th>playerDam</th>
+      <th>playerGold</th>
+      <th>role</th>
+      <th>team</th>
+      <th>teamDam</th>
+      <th>teamDeaths</th>
+      <th>teamGold</th>
+      <th>teamID</th>
+      <th>teamKills</th>
+      <th>wardscleared</th>
+      <th>wardsplaced</th>
+      <th>wcpm</th>
+      <th>wins</th>
+      <th>wpm</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>570</td>
+      <td>105</td>
+      <td>6217</td>
+      <td>8.8</td>
+      <td>16.4</td>
+      <td>49</td>
+      <td>591.6</td>
+      <td>4</td>
+      <td>Jian</td>
+      <td>Uzi</td>
+      <td>20</td>
+      <td>25.1</td>
+      <td>4.4</td>
+      <td>112</td>
+      <td>36.0</td>
+      <td>69.8</td>
+      <td>Zi-Hao</td>
+      <td>8</td>
+      <td>707.299996</td>
+      <td>9</td>
+      <td>Royal Club</td>
+      <td>Jian Zi-Hao</td>
+      <td>418406</td>
+      <td>294411</td>
+      <td>ADC</td>
+      <td></td>
+      <td>1261411</td>
+      <td>299</td>
+      <td>1174035</td>
+      <td></td>
+      <td>311</td>
+      <td>136</td>
+      <td>123</td>
+      <td>0.19</td>
+      <td>12</td>
+      <td>0.17</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>472</td>
+      <td>141</td>
+      <td>4172</td>
+      <td>8.4</td>
+      <td>18.7</td>
+      <td>25</td>
+      <td>563.8</td>
+      <td>1</td>
+      <td>Heo</td>
+      <td>PawN</td>
+      <td>17</td>
+      <td>21.9</td>
+      <td>9.9</td>
+      <td>106</td>
+      <td>27.6</td>
+      <td>64.3</td>
+      <td>Won-seok</td>
+      <td>2</td>
+      <td>496.616661</td>
+      <td>9</td>
+      <td>Samsung White</td>
+      <td>Heo Won-seok</td>
+      <td>280000</td>
+      <td>210602</td>
+      <td>MID</td>
+      <td></td>
+      <td>1003895</td>
+      <td>134</td>
+      <td>961715</td>
+      <td></td>
+      <td>384</td>
+      <td>84</td>
+      <td>186</td>
+      <td>0.17</td>
+      <td>15</td>
+      <td>0.37</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>478</td>
+      <td>124</td>
+      <td>3700</td>
+      <td>7.5</td>
+      <td>21.6</td>
+      <td>29</td>
+      <td>580.6</td>
+      <td>2</td>
+      <td>Gu</td>
+      <td>Imp</td>
+      <td>17</td>
+      <td>20.8</td>
+      <td>7.9</td>
+      <td>105</td>
+      <td>27.3</td>
+      <td>59.6</td>
+      <td>Seung-bin</td>
+      <td>2</td>
+      <td>496.616661</td>
+      <td>9</td>
+      <td>Samsung White</td>
+      <td>Gu Seung-bin</td>
+      <td>288356</td>
+      <td>199788</td>
+      <td>ADC</td>
+      <td></td>
+      <td>1003895</td>
+      <td>134</td>
+      <td>961715</td>
+      <td></td>
+      <td>384</td>
+      <td>64</td>
+      <td>125</td>
+      <td>0.13</td>
+      <td>15</td>
+      <td>0.25</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>464</td>
+      <td>188</td>
+      <td>1841</td>
+      <td>3.7</td>
+      <td>23.9</td>
+      <td>32</td>
+      <td>358.8</td>
+      <td>3</td>
+      <td>Choi</td>
+      <td>DanDy</td>
+      <td>17</td>
+      <td>18.5</td>
+      <td>8.5</td>
+      <td>84</td>
+      <td>21.9</td>
+      <td>70.8</td>
+      <td>In-kyu</td>
+      <td>2</td>
+      <td>496.616661</td>
+      <td>9</td>
+      <td>Samsung White</td>
+      <td>Choi In-kyu</td>
+      <td>178185</td>
+      <td>178080</td>
+      <td>JNG</td>
+      <td></td>
+      <td>1003895</td>
+      <td>134</td>
+      <td>961715</td>
+      <td></td>
+      <td>384</td>
+      <td>92</td>
+      <td>272</td>
+      <td>0.19</td>
+      <td>15</td>
+      <td>0.55</td>
+      <td>2014</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>473</td>
+      <td>66</td>
+      <td>3342</td>
+      <td>7.5</td>
+      <td>17.4</td>
+      <td>35</td>
+      <td>674.9</td>
+      <td>2</td>
+      <td>Kim</td>
+      <td>Deft</td>
+      <td>13</td>
+      <td>23.5</td>
+      <td>4.3</td>
+      <td>83</td>
+      <td>38.4</td>
+      <td>69.0</td>
+      <td>Hyuk-kyu</td>
+      <td>5</td>
+      <td>444.933329</td>
+      <td>8</td>
+      <td>Samsung Blue</td>
+      <td>Kim Hyuk-kyu</td>
+      <td>300301</td>
+      <td>176061</td>
+      <td>ADC</td>
+      <td></td>
+      <td>823722</td>
+      <td>201</td>
+      <td>749593</td>
+      <td></td>
+      <td>216</td>
+      <td>75</td>
+      <td>118</td>
+      <td>0.17</td>
+      <td>8</td>
+      <td>0.27</td>
+      <td>2014</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 
@@ -14319,8 +14713,57 @@ from every player that participated in the League of Legends World Championships
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In the above example 2014 World Championship dataset there are 37 columns. We have:</p>
+<ul>
+<li>ID (Unique player ID#)</li>
+<li>Assists</li>
+<li><a href="https://leagueoflegends.fandom.com/wiki/Minion_(League_of_Legends)#Creep_Score">CS</a> (Creep score)</li>
+<li>CSM (Creep score per minute)</li>
+<li>Death Percentage (The percentage of deaths a player had in accordance with their team)</li>
+<li>Deaths</li>
+<li>DPM (Damage per minute to other players)</li>
+<li><a href="https://leagueoflegends.fandom.com/wiki/Kill#Bounties">FB</a> (Number of first kill of the game earned by player)</li>
+<li>First Name</li>
+<li>Gamertag (Unique player username)</li>
+<li>Games (Number of games played by the team that year)</li>
+<li>Gold Percentage (The percentage of gold that a player gained for their team)</li>
+<li><a href="https://leagueoflegends.fandom.com/wiki/Kill_to_Death_Ratio">KDA</a> (Kill/Death/Assist Ratio)</li>
+<li>Kills </li>
+<li>Kill Share Percentage (The number of the players kills divided by the number of team kills)</li>
+<li>Kill Participation Percentage (The number of kills and assists divided by the number of team kills)</li>
+<li>Last Name</li>
+<li>Losses</li>
+<li>Matches (Number of matches played in the World Championship by the player)</li>
+<li>Panda Team (Team Name)</li>
+<li>Player (Player Full Name)</li>
+<li>Player Damage (Total damage dealt to other players)</li>
+<li>Player Gold (Total gold gained by the player)</li>
+<li>Role (Position played by the player: <a href="https://leagueoflegends.fandom.com/wiki/Lanes">Top, Mid, Jungle, Support, ADC</a>)</li>
+<li>Team (Secondary column for team name)</li>
+<li>Team Damage (Total damage dealt to other players by the team)</li>
+<li>Team Gold (Total gold earned by the team)</li>
+<li>Team ID (Tertiary column for team name)</li>
+<li>Team Kills (Total number of kills earned by the team)</li>
+<li>Wards Cleared (Number of <a href="https://leagueoflegends.fandom.com/wiki/Ward">wards</a> removed by player)</li>
+<li>Wards Placed (Number of wards placed by player)</li>
+<li>WCPM (Wards cleared per minute)</li>
+<li>Wins</li>
+<li>WPM (Wards placed per minute)</li>
+<li>Year</li>
+</ul>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The titles of each column here should also be self-explanatory. If you'd like to learn more about a column within the context of the game, important topics have links to additional information.</p>
+
+</div>
 </div>
 </body>
 

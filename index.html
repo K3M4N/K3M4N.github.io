@@ -14312,7 +14312,7 @@ Released in 2009, LoL has rapidly grown in popularity, having become one of the 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14342,13 +14342,13 @@ Released in 2009, LoL has rapidly grown in popularity, having become one of the 
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>With the conclusion of the 2020 League of Legends World Championship, we will be pulling the player statistics
 from every player that participated in the League of Legends World Championships from 2014-2020 from this <a href="https://www.rotowire.com/esports/stats-lol.php?league=297&amp;series=&amp;tourn=">website</a> that hosts a plethora of player statistics for recreational fantasy team building.</p>
-<p>We begin by manually extracting the data from the years of 2014-2020 from the JSON HTML web page URLS into 5 data frames. Manual scraping from the tables was not an option here due to the fact that the website generated the table through scripts. The unique URL for each JSON HTML were found by scrolling through the website source code in order to find the option values for each respective year. Note that we will be adding in an additional column representing year as it will help us analyze the data later.</p>
+<p>We begin by manually extracting the data from the years of 2014-2020 from the JSON HTML web page URLS into 5 data frames which can be read more upon <a href="https://docs.python.org/3/library/json.html">here</a>. Manual scraping from the tables was not an option here due to the fact that the website generated the table through scripts. The unique URL for each JSON HTML were found by scrolling through the website source code in order to find the option values for each respective year. Note that we will be adding in an additional column representing year as it will help us analyze the data later.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Obtaining 2014 League of Legends World Championship Data</span>
@@ -14422,7 +14422,7 @@ from every player that participated in the League of Legends World Championships
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -14442,7 +14442,7 @@ from every player that participated in the League of Legends World Championships
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
@@ -14781,7 +14781,7 @@ from every player that participated in the League of Legends World Championships
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Removing First Name, Last Name, Matches, Player Name, Player ID, Team, Team ID</span>
@@ -14846,7 +14846,7 @@ from every player that participated in the League of Legends World Championships
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a new column initalized to False indicating if the player won the World Championship for the respective year</span>
@@ -14896,7 +14896,7 @@ from every player that participated in the League of Legends World Championships
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2014</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14915,7 +14915,7 @@ from every player that participated in the League of Legends World Championships
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
@@ -15090,6 +15090,12 @@ from every player that participated in the League of Legends World Championships
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center><h3>League of Legends Champions</h3>(Ezreal, Lee Sin, Lux, Teemo, Leona) pictured left to right</center>
+<center><img src="https://wallpaperaccess.com/full/217097.jpg" width="700"/></center>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
 <h2>Data Preparation</h2>
 </div>
@@ -15102,7 +15108,7 @@ from every player that participated in the League of Legends World Championships
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Collecting all the dataframes and storing them inside an array to be concatenated</span>
@@ -15118,7 +15124,7 @@ from every player that participated in the League of Legends World Championships
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfTotal</span>
@@ -15137,7 +15143,7 @@ from every player that participated in the League of Legends World Championships
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
@@ -15448,6 +15454,1619 @@ from every player that participated in the League of Legends World Championships
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Next we will be creating seperate dataframes grouped by position for each year between the years of 2014-2020 so that we can compare players to others playing within the same position in the World Championships.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Initalizing position dataframes to dataframes of that year</span>
+<span class="n">top2014</span> <span class="o">=</span> <span class="n">df2014</span>
+<span class="n">mid2014</span> <span class="o">=</span> <span class="n">df2014</span>
+<span class="n">jng2014</span> <span class="o">=</span> <span class="n">df2014</span>
+<span class="n">adc2014</span> <span class="o">=</span> <span class="n">df2014</span>
+<span class="n">sup2014</span> <span class="o">=</span> <span class="n">df2014</span>
+
+<span class="n">top2015</span> <span class="o">=</span> <span class="n">df2015</span>
+<span class="n">mid2015</span> <span class="o">=</span> <span class="n">df2015</span>
+<span class="n">jng2015</span> <span class="o">=</span> <span class="n">df2015</span>
+<span class="n">adc2015</span> <span class="o">=</span> <span class="n">df2015</span>
+<span class="n">sup2015</span> <span class="o">=</span> <span class="n">df2015</span>
+
+<span class="n">top2016</span> <span class="o">=</span> <span class="n">df2016</span>
+<span class="n">mid2016</span> <span class="o">=</span> <span class="n">df2016</span>
+<span class="n">jng2016</span> <span class="o">=</span> <span class="n">df2016</span>
+<span class="n">adc2016</span> <span class="o">=</span> <span class="n">df2016</span>
+<span class="n">sup2016</span> <span class="o">=</span> <span class="n">df2016</span>
+
+<span class="n">top2017</span> <span class="o">=</span> <span class="n">df2017</span>
+<span class="n">mid2017</span> <span class="o">=</span> <span class="n">df2017</span>
+<span class="n">jng2017</span> <span class="o">=</span> <span class="n">df2017</span>
+<span class="n">adc2017</span> <span class="o">=</span> <span class="n">df2017</span>
+<span class="n">sup2017</span> <span class="o">=</span> <span class="n">df2017</span>
+
+<span class="n">top2018</span> <span class="o">=</span> <span class="n">df2018</span>
+<span class="n">mid2018</span> <span class="o">=</span> <span class="n">df2018</span>
+<span class="n">jng2018</span> <span class="o">=</span> <span class="n">df2018</span>
+<span class="n">adc2018</span> <span class="o">=</span> <span class="n">df2018</span>
+<span class="n">sup2018</span> <span class="o">=</span> <span class="n">df2018</span>
+
+<span class="n">top2019</span> <span class="o">=</span> <span class="n">df2019</span>
+<span class="n">mid2019</span> <span class="o">=</span> <span class="n">df2019</span>
+<span class="n">jng2019</span> <span class="o">=</span> <span class="n">df2019</span>
+<span class="n">adc2019</span> <span class="o">=</span> <span class="n">df2019</span>
+<span class="n">sup2019</span> <span class="o">=</span> <span class="n">df2019</span>
+
+<span class="n">top2020</span> <span class="o">=</span> <span class="n">df2020</span>
+<span class="n">mid2020</span> <span class="o">=</span> <span class="n">df2020</span>
+<span class="n">jng2020</span> <span class="o">=</span> <span class="n">df2020</span>
+<span class="n">adc2020</span> <span class="o">=</span> <span class="n">df2020</span>
+<span class="n">sup2020</span> <span class="o">=</span> <span class="n">df2020</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Iterate through each year of the position dataframes and drop positions that do not match the TOP position</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">top2014</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;TOP&#39;</span><span class="p">:</span>
+        <span class="n">top2014</span> <span class="o">=</span> <span class="n">top2014</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">top2015</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;TOP&#39;</span><span class="p">:</span>
+        <span class="n">top2015</span> <span class="o">=</span> <span class="n">top2015</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+                
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">top2016</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;TOP&#39;</span><span class="p">:</span>
+        <span class="n">top2016</span> <span class="o">=</span> <span class="n">top2016</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">top2017</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;TOP&#39;</span><span class="p">:</span>
+        <span class="n">top2017</span> <span class="o">=</span> <span class="n">top2017</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">top2018</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;TOP&#39;</span><span class="p">:</span>
+        <span class="n">top2018</span> <span class="o">=</span> <span class="n">top2018</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">top2019</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;TOP&#39;</span><span class="p">:</span>
+        <span class="n">top2019</span> <span class="o">=</span> <span class="n">top2019</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">top2020</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;TOP&#39;</span><span class="p">:</span>
+        <span class="n">top2020</span> <span class="o">=</span> <span class="n">top2020</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Iterate through each year of the position dataframes and drop positions that do not match the MID position</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mid2014</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;MID&#39;</span><span class="p">:</span>
+        <span class="n">mid2014</span> <span class="o">=</span> <span class="n">mid2014</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mid2015</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;MID&#39;</span><span class="p">:</span>
+        <span class="n">mid2015</span> <span class="o">=</span> <span class="n">mid2015</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mid2016</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;MID&#39;</span><span class="p">:</span>
+        <span class="n">mid2016</span> <span class="o">=</span> <span class="n">mid2016</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mid2017</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;MID&#39;</span><span class="p">:</span>
+        <span class="n">mid2017</span> <span class="o">=</span> <span class="n">mid2017</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mid2018</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;MID&#39;</span><span class="p">:</span>
+        <span class="n">mid2018</span> <span class="o">=</span> <span class="n">mid2018</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mid2019</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;MID&#39;</span><span class="p">:</span>
+        <span class="n">mid2019</span> <span class="o">=</span> <span class="n">mid2019</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">mid2020</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;MID&#39;</span><span class="p">:</span>
+        <span class="n">mid2020</span> <span class="o">=</span> <span class="n">mid2020</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Iterate through each year of the position dataframes and drop positions that do not match the JNG position</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">jng2014</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;JNG&#39;</span><span class="p">:</span>
+        <span class="n">jng2014</span> <span class="o">=</span> <span class="n">jng2014</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">jng2015</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;JNG&#39;</span><span class="p">:</span>
+        <span class="n">jng2015</span> <span class="o">=</span> <span class="n">jng2015</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">jng2016</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;JNG&#39;</span><span class="p">:</span>
+        <span class="n">jng2016</span> <span class="o">=</span> <span class="n">jng2016</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">jng2017</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;JNG&#39;</span><span class="p">:</span>
+        <span class="n">jng2017</span> <span class="o">=</span> <span class="n">jng2017</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">jng2018</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;JNG&#39;</span><span class="p">:</span>
+        <span class="n">jng2018</span> <span class="o">=</span> <span class="n">jng2018</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">jng2019</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;JNG&#39;</span><span class="p">:</span>
+        <span class="n">jng2019</span> <span class="o">=</span> <span class="n">jng2019</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">jng2020</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;JNG&#39;</span><span class="p">:</span>
+        <span class="n">jng2020</span> <span class="o">=</span> <span class="n">jng2020</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Iterate through each year of the position dataframes and drop positions that do not match the ADC position</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">adc2014</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;ADC&#39;</span><span class="p">:</span>
+        <span class="n">adc2014</span> <span class="o">=</span> <span class="n">adc2014</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">adc2015</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;ADC&#39;</span><span class="p">:</span>
+        <span class="n">adc2015</span> <span class="o">=</span> <span class="n">adc2015</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">adc2016</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;ADC&#39;</span><span class="p">:</span>
+        <span class="n">adc2016</span> <span class="o">=</span> <span class="n">adc2016</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">adc2017</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;ADC&#39;</span><span class="p">:</span>
+        <span class="n">adc2017</span> <span class="o">=</span> <span class="n">adc2017</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">adc2018</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;ADC&#39;</span><span class="p">:</span>
+        <span class="n">adc2018</span> <span class="o">=</span> <span class="n">adc2018</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">adc2019</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;ADC&#39;</span><span class="p">:</span>
+        <span class="n">adc2019</span> <span class="o">=</span> <span class="n">adc2019</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">adc2020</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;ADC&#39;</span><span class="p">:</span>
+        <span class="n">adc2020</span> <span class="o">=</span> <span class="n">adc2020</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Iterate through each year of the position dataframes and drop positions that do not match the SUP position</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sup2014</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUP&#39;</span><span class="p">:</span>
+        <span class="n">sup2014</span> <span class="o">=</span> <span class="n">sup2014</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sup2015</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUP&#39;</span><span class="p">:</span>
+        <span class="n">sup2015</span> <span class="o">=</span> <span class="n">sup2015</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sup2016</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUP&#39;</span><span class="p">:</span>
+        <span class="n">sup2016</span> <span class="o">=</span> <span class="n">sup2016</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sup2017</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUP&#39;</span><span class="p">:</span>
+        <span class="n">sup2017</span> <span class="o">=</span> <span class="n">sup2017</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sup2018</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUP&#39;</span><span class="p">:</span>
+        <span class="n">sup2018</span> <span class="o">=</span> <span class="n">sup2018</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sup2019</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUP&#39;</span><span class="p">:</span>
+        <span class="n">sup2019</span> <span class="o">=</span> <span class="n">sup2019</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+        
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sup2020</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUP&#39;</span><span class="p">:</span>
+        <span class="n">sup2020</span> <span class="o">=</span> <span class="n">sup2020</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">top2014</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>gamertag</th>
+      <th>team</th>
+      <th>role</th>
+      <th>games</th>
+      <th>wins</th>
+      <th>losses</th>
+      <th>assists</th>
+      <th>kda</th>
+      <th>kp</th>
+      <th>killshare</th>
+      <th>cs</th>
+      <th>csm</th>
+      <th>goldperc</th>
+      <th>dpm</th>
+      <th>fb</th>
+      <th>deathperc</th>
+      <th>wpm</th>
+      <th>wcpm</th>
+      <th>worldchamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>2014</td>
+      <td>Looper</td>
+      <td>Samsung White</td>
+      <td>TOP</td>
+      <td>17</td>
+      <td>15</td>
+      <td>2</td>
+      <td>184</td>
+      <td>12.1</td>
+      <td>66.4</td>
+      <td>18.5</td>
+      <td>3463</td>
+      <td>7.0</td>
+      <td>19.8</td>
+      <td>393.7</td>
+      <td>2</td>
+      <td>15.7</td>
+      <td>0.34</td>
+      <td>0.13</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2014</td>
+      <td>Koro1</td>
+      <td>EDward Gaming</td>
+      <td>TOP</td>
+      <td>12</td>
+      <td>6</td>
+      <td>6</td>
+      <td>83</td>
+      <td>3.4</td>
+      <td>65.1</td>
+      <td>22.6</td>
+      <td>2903</td>
+      <td>6.7</td>
+      <td>21.2</td>
+      <td>397.1</td>
+      <td>0</td>
+      <td>21.9</td>
+      <td>0.27</td>
+      <td>0.12</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2014</td>
+      <td>Save</td>
+      <td>NaJin White Shield</td>
+      <td>TOP</td>
+      <td>10</td>
+      <td>5</td>
+      <td>5</td>
+      <td>40</td>
+      <td>2.1</td>
+      <td>58.1</td>
+      <td>23.9</td>
+      <td>2826</td>
+      <td>7.0</td>
+      <td>21.4</td>
+      <td>410.6</td>
+      <td>0</td>
+      <td>26.2</td>
+      <td>0.39</td>
+      <td>0.21</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2014</td>
+      <td>Balls</td>
+      <td>Cloud9</td>
+      <td>TOP</td>
+      <td>11</td>
+      <td>5</td>
+      <td>6</td>
+      <td>61</td>
+      <td>2.1</td>
+      <td>59.9</td>
+      <td>16.9</td>
+      <td>2492</td>
+      <td>6.2</td>
+      <td>20.1</td>
+      <td>363.3</td>
+      <td>0</td>
+      <td>22.9</td>
+      <td>0.36</td>
+      <td>0.13</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>2014</td>
+      <td>Acorn</td>
+      <td>Samsung Blue</td>
+      <td>TOP</td>
+      <td>13</td>
+      <td>8</td>
+      <td>5</td>
+      <td>108</td>
+      <td>3.3</td>
+      <td>60.2</td>
+      <td>10.2</td>
+      <td>2533</td>
+      <td>5.7</td>
+      <td>19.2</td>
+      <td>344.9</td>
+      <td>1</td>
+      <td>19.9</td>
+      <td>0.37</td>
+      <td>0.13</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mid2014</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>gamertag</th>
+      <th>team</th>
+      <th>role</th>
+      <th>games</th>
+      <th>wins</th>
+      <th>losses</th>
+      <th>assists</th>
+      <th>kda</th>
+      <th>kp</th>
+      <th>killshare</th>
+      <th>cs</th>
+      <th>csm</th>
+      <th>goldperc</th>
+      <th>dpm</th>
+      <th>fb</th>
+      <th>deathperc</th>
+      <th>wpm</th>
+      <th>wcpm</th>
+      <th>worldchamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2014</td>
+      <td>PawN</td>
+      <td>Samsung White</td>
+      <td>MID</td>
+      <td>17</td>
+      <td>15</td>
+      <td>2</td>
+      <td>141</td>
+      <td>9.9</td>
+      <td>64.3</td>
+      <td>27.6</td>
+      <td>4172</td>
+      <td>8.4</td>
+      <td>21.9</td>
+      <td>563.8</td>
+      <td>1</td>
+      <td>18.7</td>
+      <td>0.37</td>
+      <td>0.17</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2014</td>
+      <td>Corn</td>
+      <td>Royal Club</td>
+      <td>MID</td>
+      <td>20</td>
+      <td>12</td>
+      <td>8</td>
+      <td>155</td>
+      <td>3.8</td>
+      <td>71.7</td>
+      <td>21.9</td>
+      <td>5292</td>
+      <td>7.5</td>
+      <td>22.0</td>
+      <td>391.9</td>
+      <td>1</td>
+      <td>19.7</td>
+      <td>0.33</td>
+      <td>0.16</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2014</td>
+      <td>dade</td>
+      <td>Samsung Blue</td>
+      <td>MID</td>
+      <td>13</td>
+      <td>8</td>
+      <td>5</td>
+      <td>68</td>
+      <td>2.9</td>
+      <td>62.0</td>
+      <td>30.6</td>
+      <td>3478</td>
+      <td>7.8</td>
+      <td>23.2</td>
+      <td>442.5</td>
+      <td>3</td>
+      <td>22.9</td>
+      <td>0.33</td>
+      <td>0.21</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2014</td>
+      <td>Cool</td>
+      <td>Oh My God</td>
+      <td>MID</td>
+      <td>14</td>
+      <td>8</td>
+      <td>6</td>
+      <td>93</td>
+      <td>3.3</td>
+      <td>64.9</td>
+      <td>23.6</td>
+      <td>4400</td>
+      <td>7.8</td>
+      <td>22.9</td>
+      <td>495.6</td>
+      <td>0</td>
+      <td>23.4</td>
+      <td>0.30</td>
+      <td>0.18</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2014</td>
+      <td>Hai</td>
+      <td>Cloud9</td>
+      <td>MID</td>
+      <td>11</td>
+      <td>5</td>
+      <td>6</td>
+      <td>54</td>
+      <td>1.7</td>
+      <td>65.5</td>
+      <td>27.5</td>
+      <td>2952</td>
+      <td>7.3</td>
+      <td>22.0</td>
+      <td>515.7</td>
+      <td>2</td>
+      <td>31.4</td>
+      <td>0.28</td>
+      <td>0.23</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">jng2014</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>gamertag</th>
+      <th>team</th>
+      <th>role</th>
+      <th>games</th>
+      <th>wins</th>
+      <th>losses</th>
+      <th>assists</th>
+      <th>kda</th>
+      <th>kp</th>
+      <th>killshare</th>
+      <th>cs</th>
+      <th>csm</th>
+      <th>goldperc</th>
+      <th>dpm</th>
+      <th>fb</th>
+      <th>deathperc</th>
+      <th>wpm</th>
+      <th>wcpm</th>
+      <th>worldchamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>2014</td>
+      <td>DanDy</td>
+      <td>Samsung White</td>
+      <td>JNG</td>
+      <td>17</td>
+      <td>15</td>
+      <td>2</td>
+      <td>188</td>
+      <td>8.5</td>
+      <td>70.8</td>
+      <td>21.9</td>
+      <td>1841</td>
+      <td>3.7</td>
+      <td>18.5</td>
+      <td>358.8</td>
+      <td>3</td>
+      <td>23.9</td>
+      <td>0.55</td>
+      <td>0.19</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2014</td>
+      <td>inSec</td>
+      <td>Royal Club</td>
+      <td>JNG</td>
+      <td>20</td>
+      <td>12</td>
+      <td>8</td>
+      <td>134</td>
+      <td>2.7</td>
+      <td>62.1</td>
+      <td>19.0</td>
+      <td>2235</td>
+      <td>3.2</td>
+      <td>17.7</td>
+      <td>306.1</td>
+      <td>3</td>
+      <td>23.7</td>
+      <td>0.49</td>
+      <td>0.16</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2014</td>
+      <td>Loveling</td>
+      <td>Oh My God</td>
+      <td>JNG</td>
+      <td>14</td>
+      <td>8</td>
+      <td>6</td>
+      <td>90</td>
+      <td>4.2</td>
+      <td>63.6</td>
+      <td>23.6</td>
+      <td>1747</td>
+      <td>3.1</td>
+      <td>18.1</td>
+      <td>331.7</td>
+      <td>2</td>
+      <td>18.1</td>
+      <td>0.62</td>
+      <td>0.22</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2014</td>
+      <td>Clearlove</td>
+      <td>EDward Gaming</td>
+      <td>JNG</td>
+      <td>12</td>
+      <td>6</td>
+      <td>6</td>
+      <td>87</td>
+      <td>3.6</td>
+      <td>63.6</td>
+      <td>19.0</td>
+      <td>1489</td>
+      <td>3.4</td>
+      <td>18.3</td>
+      <td>292.2</td>
+      <td>5</td>
+      <td>20.1</td>
+      <td>0.49</td>
+      <td>0.22</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2014</td>
+      <td>Spirit</td>
+      <td>Samsung Blue</td>
+      <td>JNG</td>
+      <td>13</td>
+      <td>8</td>
+      <td>5</td>
+      <td>99</td>
+      <td>4.4</td>
+      <td>62.5</td>
+      <td>16.7</td>
+      <td>1595</td>
+      <td>3.6</td>
+      <td>18.6</td>
+      <td>260.8</td>
+      <td>2</td>
+      <td>15.4</td>
+      <td>0.71</td>
+      <td>0.32</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">adc2014</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>gamertag</th>
+      <th>team</th>
+      <th>role</th>
+      <th>games</th>
+      <th>wins</th>
+      <th>losses</th>
+      <th>assists</th>
+      <th>kda</th>
+      <th>kp</th>
+      <th>killshare</th>
+      <th>cs</th>
+      <th>csm</th>
+      <th>goldperc</th>
+      <th>dpm</th>
+      <th>fb</th>
+      <th>deathperc</th>
+      <th>wpm</th>
+      <th>wcpm</th>
+      <th>worldchamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014</td>
+      <td>Uzi</td>
+      <td>Royal Club</td>
+      <td>ADC</td>
+      <td>20</td>
+      <td>12</td>
+      <td>8</td>
+      <td>105</td>
+      <td>4.4</td>
+      <td>69.8</td>
+      <td>36.0</td>
+      <td>6217</td>
+      <td>8.8</td>
+      <td>25.1</td>
+      <td>591.6</td>
+      <td>4</td>
+      <td>16.4</td>
+      <td>0.17</td>
+      <td>0.19</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>Imp</td>
+      <td>Samsung White</td>
+      <td>ADC</td>
+      <td>17</td>
+      <td>15</td>
+      <td>2</td>
+      <td>124</td>
+      <td>7.9</td>
+      <td>59.6</td>
+      <td>27.3</td>
+      <td>3700</td>
+      <td>7.5</td>
+      <td>20.8</td>
+      <td>580.6</td>
+      <td>2</td>
+      <td>21.6</td>
+      <td>0.25</td>
+      <td>0.13</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014</td>
+      <td>Deft</td>
+      <td>Samsung Blue</td>
+      <td>ADC</td>
+      <td>13</td>
+      <td>8</td>
+      <td>5</td>
+      <td>66</td>
+      <td>4.3</td>
+      <td>69.0</td>
+      <td>38.4</td>
+      <td>3342</td>
+      <td>7.5</td>
+      <td>23.5</td>
+      <td>674.9</td>
+      <td>2</td>
+      <td>17.4</td>
+      <td>0.27</td>
+      <td>0.17</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2014</td>
+      <td>Sneaky</td>
+      <td>Cloud9</td>
+      <td>ADC</td>
+      <td>11</td>
+      <td>5</td>
+      <td>6</td>
+      <td>50</td>
+      <td>4.0</td>
+      <td>69.7</td>
+      <td>34.5</td>
+      <td>3098</td>
+      <td>7.7</td>
+      <td>23.6</td>
+      <td>548.6</td>
+      <td>0</td>
+      <td>14.3</td>
+      <td>0.25</td>
+      <td>0.18</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2014</td>
+      <td>NaMei</td>
+      <td>EDward Gaming</td>
+      <td>ADC</td>
+      <td>12</td>
+      <td>6</td>
+      <td>6</td>
+      <td>82</td>
+      <td>3.8</td>
+      <td>65.6</td>
+      <td>23.6</td>
+      <td>3428</td>
+      <td>7.9</td>
+      <td>23.3</td>
+      <td>540.5</td>
+      <td>0</td>
+      <td>20.1</td>
+      <td>0.27</td>
+      <td>0.20</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sup2014</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[66]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>gamertag</th>
+      <th>team</th>
+      <th>role</th>
+      <th>games</th>
+      <th>wins</th>
+      <th>losses</th>
+      <th>assists</th>
+      <th>kda</th>
+      <th>kp</th>
+      <th>killshare</th>
+      <th>cs</th>
+      <th>csm</th>
+      <th>goldperc</th>
+      <th>dpm</th>
+      <th>fb</th>
+      <th>deathperc</th>
+      <th>wpm</th>
+      <th>wcpm</th>
+      <th>worldchamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>32</th>
+      <td>2014</td>
+      <td>Mata</td>
+      <td>Samsung White</td>
+      <td>SUP</td>
+      <td>17</td>
+      <td>15</td>
+      <td>2</td>
+      <td>253</td>
+      <td>10.0</td>
+      <td>70.6</td>
+      <td>4.7</td>
+      <td>342</td>
+      <td>0.7</td>
+      <td>14.4</td>
+      <td>124.5</td>
+      <td>2</td>
+      <td>20.1</td>
+      <td>1.56</td>
+      <td>0.30</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>2014</td>
+      <td>Zero</td>
+      <td>Royal Club</td>
+      <td>SUP</td>
+      <td>20</td>
+      <td>12</td>
+      <td>8</td>
+      <td>224</td>
+      <td>3.9</td>
+      <td>75.6</td>
+      <td>3.5</td>
+      <td>437</td>
+      <td>0.6</td>
+      <td>15.4</td>
+      <td>157.5</td>
+      <td>1</td>
+      <td>20.1</td>
+      <td>1.32</td>
+      <td>0.33</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>2014</td>
+      <td>GreenTea</td>
+      <td>ahq e-Sports Club</td>
+      <td>SUP</td>
+      <td>7</td>
+      <td>3</td>
+      <td>4</td>
+      <td>54</td>
+      <td>2.1</td>
+      <td>59.8</td>
+      <td>9.3</td>
+      <td>203</td>
+      <td>0.8</td>
+      <td>14.2</td>
+      <td>155.8</td>
+      <td>1</td>
+      <td>22.1</td>
+      <td>1.28</td>
+      <td>0.15</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>2014</td>
+      <td>Cloud</td>
+      <td>Oh My God</td>
+      <td>SUP</td>
+      <td>8</td>
+      <td>5</td>
+      <td>3</td>
+      <td>101</td>
+      <td>4.3</td>
+      <td>70.9</td>
+      <td>4.0</td>
+      <td>220</td>
+      <td>0.7</td>
+      <td>15.3</td>
+      <td>112.4</td>
+      <td>0</td>
+      <td>23.6</td>
+      <td>1.46</td>
+      <td>0.28</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>2014</td>
+      <td>GorillA</td>
+      <td>NaJin White Shield</td>
+      <td>SUP</td>
+      <td>10</td>
+      <td>5</td>
+      <td>5</td>
+      <td>86</td>
+      <td>3.0</td>
+      <td>76.9</td>
+      <td>3.4</td>
+      <td>281</td>
+      <td>0.7</td>
+      <td>15.1</td>
+      <td>140.2</td>
+      <td>0</td>
+      <td>23.8</td>
+      <td>1.55</td>
+      <td>0.29</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now that we created dataframes for each respective position for the years between 2014-2020 of the World Championship, our last step before we head into our data analysis will to be create a consolidated dataframe for each position throughout all years as a total. This will help us identify general trends within positions as well as any changes throughout the years of the World Championship.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Collecting all the positional dataframes and storing them inside arrays to be concatenated</span>
+<span class="n">topFrames</span> <span class="o">=</span> <span class="p">[</span><span class="n">top2014</span><span class="p">,</span><span class="n">top2015</span><span class="p">,</span><span class="n">top2016</span><span class="p">,</span><span class="n">top2017</span><span class="p">,</span><span class="n">top2018</span><span class="p">,</span><span class="n">top2019</span><span class="p">,</span><span class="n">top2020</span><span class="p">]</span>
+<span class="n">midFrames</span> <span class="o">=</span> <span class="p">[</span><span class="n">mid2014</span><span class="p">,</span><span class="n">mid2015</span><span class="p">,</span><span class="n">mid2016</span><span class="p">,</span><span class="n">mid2017</span><span class="p">,</span><span class="n">mid2018</span><span class="p">,</span><span class="n">mid2019</span><span class="p">,</span><span class="n">mid2020</span><span class="p">]</span>
+<span class="n">jngFrames</span> <span class="o">=</span> <span class="p">[</span><span class="n">jng2014</span><span class="p">,</span><span class="n">jng2015</span><span class="p">,</span><span class="n">jng2016</span><span class="p">,</span><span class="n">jng2017</span><span class="p">,</span><span class="n">jng2018</span><span class="p">,</span><span class="n">jng2019</span><span class="p">,</span><span class="n">jng2020</span><span class="p">]</span>
+<span class="n">adcFrames</span> <span class="o">=</span> <span class="p">[</span><span class="n">adc2014</span><span class="p">,</span><span class="n">adc2015</span><span class="p">,</span><span class="n">adc2016</span><span class="p">,</span><span class="n">adc2017</span><span class="p">,</span><span class="n">adc2018</span><span class="p">,</span><span class="n">adc2019</span><span class="p">,</span><span class="n">adc2020</span><span class="p">]</span>
+<span class="n">supFrames</span> <span class="o">=</span> <span class="p">[</span><span class="n">sup2014</span><span class="p">,</span><span class="n">sup2015</span><span class="p">,</span><span class="n">sup2016</span><span class="p">,</span><span class="n">sup2017</span><span class="p">,</span><span class="n">sup2018</span><span class="p">,</span><span class="n">sup2019</span><span class="p">,</span><span class="n">sup2020</span><span class="p">]</span>
+
+<span class="n">topTotal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">topFrames</span><span class="p">)</span>
+<span class="n">midTotal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">midFrames</span><span class="p">)</span>
+<span class="n">jngTotal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">jngFrames</span><span class="p">)</span>
+<span class="n">adcTotal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">adcFrames</span><span class="p">)</span>
+<span class="n">supTotal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">supFrames</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[74]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example TOP positional total dataframe over the years 2014-2020</span>
+<span class="n">topTotal</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[74]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>gamertag</th>
+      <th>team</th>
+      <th>role</th>
+      <th>games</th>
+      <th>wins</th>
+      <th>losses</th>
+      <th>assists</th>
+      <th>kda</th>
+      <th>kp</th>
+      <th>killshare</th>
+      <th>cs</th>
+      <th>csm</th>
+      <th>goldperc</th>
+      <th>dpm</th>
+      <th>fb</th>
+      <th>deathperc</th>
+      <th>wpm</th>
+      <th>wcpm</th>
+      <th>worldchamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>2014</td>
+      <td>Looper</td>
+      <td>Samsung White</td>
+      <td>TOP</td>
+      <td>17</td>
+      <td>15</td>
+      <td>2</td>
+      <td>184</td>
+      <td>12.1</td>
+      <td>66.4</td>
+      <td>18.5</td>
+      <td>3463</td>
+      <td>7.0</td>
+      <td>19.8</td>
+      <td>393.7</td>
+      <td>2</td>
+      <td>15.7</td>
+      <td>0.34</td>
+      <td>0.13</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2014</td>
+      <td>Koro1</td>
+      <td>EDward Gaming</td>
+      <td>TOP</td>
+      <td>12</td>
+      <td>6</td>
+      <td>6</td>
+      <td>83</td>
+      <td>3.4</td>
+      <td>65.1</td>
+      <td>22.6</td>
+      <td>2903</td>
+      <td>6.7</td>
+      <td>21.2</td>
+      <td>397.1</td>
+      <td>0</td>
+      <td>21.9</td>
+      <td>0.27</td>
+      <td>0.12</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2014</td>
+      <td>Save</td>
+      <td>NaJin White Shield</td>
+      <td>TOP</td>
+      <td>10</td>
+      <td>5</td>
+      <td>5</td>
+      <td>40</td>
+      <td>2.1</td>
+      <td>58.1</td>
+      <td>23.9</td>
+      <td>2826</td>
+      <td>7.0</td>
+      <td>21.4</td>
+      <td>410.6</td>
+      <td>0</td>
+      <td>26.2</td>
+      <td>0.39</td>
+      <td>0.21</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2014</td>
+      <td>Balls</td>
+      <td>Cloud9</td>
+      <td>TOP</td>
+      <td>11</td>
+      <td>5</td>
+      <td>6</td>
+      <td>61</td>
+      <td>2.1</td>
+      <td>59.9</td>
+      <td>16.9</td>
+      <td>2492</td>
+      <td>6.2</td>
+      <td>20.1</td>
+      <td>363.3</td>
+      <td>0</td>
+      <td>22.9</td>
+      <td>0.36</td>
+      <td>0.13</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>2014</td>
+      <td>Acorn</td>
+      <td>Samsung Blue</td>
+      <td>TOP</td>
+      <td>13</td>
+      <td>8</td>
+      <td>5</td>
+      <td>108</td>
+      <td>3.3</td>
+      <td>60.2</td>
+      <td>10.2</td>
+      <td>2533</td>
+      <td>5.7</td>
+      <td>19.2</td>
+      <td>344.9</td>
+      <td>1</td>
+      <td>19.9</td>
+      <td>0.37</td>
+      <td>0.13</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>2020</td>
+      <td>Vander</td>
+      <td>Rogue</td>
+      <td>SUP</td>
+      <td>6</td>
+      <td>1</td>
+      <td>5</td>
+      <td>31</td>
+      <td>1.9</td>
+      <td>69.8</td>
+      <td>11.3</td>
+      <td>219</td>
+      <td>1.2</td>
+      <td>13.5</td>
+      <td>132.9</td>
+      <td>1</td>
+      <td>21.8</td>
+      <td>1.81</td>
+      <td>0.30</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>2020</td>
+      <td>RedBert</td>
+      <td>INTZ e-Sports</td>
+      <td>SUP</td>
+      <td>5</td>
+      <td>1</td>
+      <td>4</td>
+      <td>33</td>
+      <td>2.4</td>
+      <td>71.7</td>
+      <td>9.4</td>
+      <td>238</td>
+      <td>1.3</td>
+      <td>13.5</td>
+      <td>152.1</td>
+      <td>0</td>
+      <td>22.5</td>
+      <td>1.85</td>
+      <td>0.42</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>2020</td>
+      <td>IgNar</td>
+      <td>FlyQuest</td>
+      <td>SUP</td>
+      <td>6</td>
+      <td>3</td>
+      <td>3</td>
+      <td>39</td>
+      <td>2.9</td>
+      <td>59.7</td>
+      <td>5.6</td>
+      <td>175</td>
+      <td>0.9</td>
+      <td>12.9</td>
+      <td>141.7</td>
+      <td>0</td>
+      <td>18.8</td>
+      <td>1.59</td>
+      <td>0.37</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>2020</td>
+      <td>Biofrost</td>
+      <td>Team SoloMid</td>
+      <td>SUP</td>
+      <td>6</td>
+      <td>0</td>
+      <td>6</td>
+      <td>26</td>
+      <td>1.6</td>
+      <td>60.4</td>
+      <td>6.3</td>
+      <td>241</td>
+      <td>1.2</td>
+      <td>12.9</td>
+      <td>116.6</td>
+      <td>0</td>
+      <td>21.2</td>
+      <td>1.77</td>
+      <td>0.52</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>2020</td>
+      <td>Koala</td>
+      <td>Machi Esports</td>
+      <td>SUP</td>
+      <td>6</td>
+      <td>1</td>
+      <td>5</td>
+      <td>27</td>
+      <td>1.3</td>
+      <td>53.7</td>
+      <td>3.7</td>
+      <td>293</td>
+      <td>1.5</td>
+      <td>12.8</td>
+      <td>147.2</td>
+      <td>0</td>
+      <td>22.3</td>
+      <td>1.83</td>
+      <td>0.68</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>216 rows × 20 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center><h3>In Game Map: Summoner's Rift</h3>(Wallpaper)<img src="https://preview.redd.it/in73r6sbixz31.png?width=4096&format=png&auto=webp&s=810fa4aef8f17b2ccf3ca4c18601eb731904d37e" width="700"/></center>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<p><center><h2>Exploratory Data Analysis</h2><center></p>
+
+</div>
 </div>
 </body>
 
